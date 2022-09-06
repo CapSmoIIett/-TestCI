@@ -5,4 +5,4 @@ build_script:
 - cmd: >-
    cd build
    cmake -G "Visual Studio 15"
-   cmake --build . --config "Debug"
+   cmake --config "Debug"
