@@ -1,8 +1,18 @@
 image:
  - Visual Studio 2017
+
 clone_folder: c:\project\source
+
+shallow_clone: true              # копируем только последний коммит, без истории (git clone --depth 1)
+
+matrix:
+  fast_finish: false           # не останавливаемся после возникновения ошибки в каком-то из заданий
+
+configuration:
+ - Debug
+ 
 build_script:
-- cmd: >-
-   cd build
-   cmake -G "Visual Studio 15"
-   cmake --build \build --config "Debug"
+ - mkdir build
+ - cd build
+ - cmake .. %CMAKE_CONFIGURE_FLAGS%
+ - cmake --build . %CMAKE_BUILD_FLAGS%
