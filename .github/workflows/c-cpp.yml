@@ -18,9 +18,6 @@ jobs:
       run: |
        mkdir build
        cd build
-       
-    - name: configure cmake
-      run: cmake .. %CMAKE_CONFIGURE_FLAGS%
       
     - name: build
       run: cmake --build . %CMAKE_BUILD_FLAGS%
