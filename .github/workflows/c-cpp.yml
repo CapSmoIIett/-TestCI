@@ -13,4 +13,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    
+
+    - name: make directory for build
+      run: |
+       mkdir build
+       cd build
+       
+    - name: configure cmake
+      run: cmake .. %CMAKE_CONFIGURE_FLAGS%
+      
+    - name: build
+      run: cmake --build . %CMAKE_BUILD_FLAGS%
