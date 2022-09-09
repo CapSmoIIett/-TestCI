@@ -9,20 +9,18 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
 
     - name: Install dependencies on ubuntu
       run: |
+       sudo apt-get update
+       sudo apt-get install ninja-build cmake
+       cmake --version
+       gcc --version
        
-       
-    - name: make directory for build
-      run: |
-       mkdir build
-       cd build
-      
     - name: build
       run: |
        cmake .. %CMAKE_CONFIGURE_FLAGS%|
