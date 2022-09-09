@@ -28,4 +28,6 @@ jobs:
        cd build
       
     - name: build
-      run: cmake --build
+      run: |
+       cmake .. %CMAKE_CONFIGURE_FLAGS%|
+       cmake --build
