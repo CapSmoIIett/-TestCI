@@ -28,4 +28,4 @@ jobs:
        cd build
       
     - name: build
-      run: cmake --build . %CMAKE_BUILD_FLAGS%
+      run: cmake --build
